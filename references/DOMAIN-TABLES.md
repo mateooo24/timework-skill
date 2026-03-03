@@ -89,6 +89,8 @@ Rules:
 
 ## 4. Proposal Terminology by Domain
 
+### 4.1 Convergent Proposals (combine existing → new)
+
 | Domain | Proposal is called | Example |
 |---|---|---|
 | Research | Hypothesis | "Market size may be 2x larger when including adjacent segments" |
@@ -97,6 +99,20 @@ Rules:
 | Document | Draft angle | "Restructure argument to lead with cost impact" |
 | Project | Approach | "Outsource module B to reduce timeline by 3 weeks" |
 | Analysis | Interpretation | "Correlation may be driven by confounding variable Z" |
+
+### 4.2 Divergent Proposals (explore unknown → new)
+
+| Domain | Proposal is called | Example |
+|---|---|---|
+| Research | Exploratory question | "Are there regulatory changes in adjacent markets that could reshape demand?" |
+| Code | Unexplored path | "What if there's a language-native concurrency primitive we haven't considered?" |
+| Design | Unvalidated need | "Do users actually need this feature, or is there a latent use case we missed?" |
+| Document | Missing perspective | "What would an opponent's strongest counter-argument look like?" |
+| Project | External factor | "Is there a supply-chain risk upstream we haven't mapped yet?" |
+| Analysis | Hidden variable | "What external dataset could reveal a driver we haven't modeled?" |
+
+Divergent proposals are tagged `mode/divergent` in kb/raw/ and require active
+new-information search (not just recombining existing KB content).
 
 ---
 

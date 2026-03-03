@@ -11,7 +11,7 @@ description: >-
   design until time runs out".
 metadata:
   author: jho6394
-  version: '4.1'
+  version: '4.2'
 ---
 
 # Forced Feedback Loop
@@ -219,17 +219,42 @@ WHILE elapsed_minutes < min_required_minutes:
     Read latest 1–3 reports (incremental protocol). Identify:
     weakest decision, largest gap, untested assumption, contradictions.
 
-  STEP 2 — PROPOSE (mandatory novelty)
-    Combine 2+ existing findings → at least one NEW proposal.
-    Strategies: INVERSION | COMBINATION | ANALOGY | DECOMPOSITION |
-    EDGE CASE | TEMPORAL | STAKEHOLDER SHIFT | CONSTRAINT FLIP |
-    TECHNOLOGY SWAP
-    Create new note in kb/raw/. Update kb/_index.md.
+  STEP 2 — PROPOSE (mandatory novelty, two modes)
+
+    MODE A — CONVERGENT (combine known → new)
+      Combine 2+ existing findings → at least one NEW proposal.
+      Strategies: INVERSION | COMBINATION | ANALOGY | DECOMPOSITION |
+      EDGE CASE | TEMPORAL | STAKEHOLDER SHIFT | CONSTRAINT FLIP |
+      TECHNOLOGY SWAP
+
+    MODE B — DIVERGENT (explore unknown → new)
+      Identify an adjacent question that existing KB does NOT answer but
+      that is plausibly relevant to `in_scope`. Formulate a speculative
+      proposal, then actively search for new information to test it.
+      Strategies: ADJACENT DOMAIN | WHAT-IF SCENARIO | MISSING VARIABLE |
+      UPSTREAM/DOWNSTREAM CAUSE | COUNTER-NARRATIVE | EMERGING TREND |
+      SCALE SHIFT (micro↔macro)
+
+    Each loop: at least one proposal from either mode.
+    Across every 3 consecutive loops, at least one DIVERGENT proposal
+    must appear — pure convergence for too long narrows the search space.
+
+    Scope guard: every divergent proposal must pass a one-sentence
+    relevance check against `task_goal` before investigation begins.
+    If it fails, log the idea in kb/raw/ tagged `deferred/out-of-loop`
+    and pick a new direction.
+
+    Create new note in kb/raw/. Tag with `mode/convergent` or
+    `mode/divergent`. Update kb/_index.md.
 
     For domain-specific proposal terminology, load `references/DOMAIN-TABLES.md` § 4.
 
   STEP 3 — TEST
     Validate or falsify the new proposal and weakest existing decision.
+    - Convergent proposals: test against existing evidence + cross-validate.
+    - Divergent proposals: actively search for NEW information (web search,
+      data lookup, tool execution) to confirm or refute. The search itself
+      is the test — log what was searched, what was found, what was absent.
     If tools fail: log gap → lower confidence → try alternative → log "untestable".
 
     For domain-specific test methods, load `references/DOMAIN-TABLES.md` § 5.
@@ -252,6 +277,7 @@ END WHILE
   revision, confidence change, or architectural decision).
 - No-update loop = `LOOP_FAIL` → immediate pivot.
 - Minimum 1 new proposal per 2 loops averaged. Zero proposals = FAIL.
+- At least 1 divergent proposal per 3 consecutive loops. All-convergent = narrowing.
 - Report types: `feedback` | `milestone` | `synthesis`.
 
 ### 4.3 Anti-Stagnation
@@ -369,7 +395,7 @@ Write ONLY after `elapsed_minutes >= min_required_minutes`:
 === FINAL REPORT | elapsed: <MM:SS> ===
 end_time: <system time>
 total_feedback_loops: <N>
-total_proposals_generated: <N>
+total_proposals_generated: <N> (convergent: <n1>, divergent: <n2>)
 total_proposals_validated: <N>
 total_proposals_falsified: <N>
 
