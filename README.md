@@ -24,7 +24,7 @@ forced-feedback-loop/
 ├── SKILL.md                        # 핵심 실행 정책 (에이전트가 활성화 시 로드)
 └── references/
     ├── DOMAIN-TABLES.md            # 도메인별 상세 테이블 (필요 시 lazy load)
-    ├── PROHIBITIONS.md             # 26개 금지 항목 (필요 시 lazy load)
+    ├── PROHIBITIONS.md             # 27개 금지 항목 (필요 시 lazy load)
     └── KNOWLEDGE-BASE.md           # KB 시스템 상세: 노트 형식, 태그, 검색 프로토콜
 ```
 
@@ -131,12 +131,19 @@ KB에 노트가 10개 미만이면 서브에이전트 없이 직접 읽습니다
 필요한 만큼만 단계적으로 읽을 수 있습니다.
 
 ```
-=== Report #3 | lines: 12 | elapsed: 14:30 | type: feedback ===
-(이 리포트는 12줄)
-=== Report #2 | lines: 8 | elapsed: 10:00 | type: milestone ===
-(이 리포트는 8줄)
+=== Report #3 | lines: 6 | elapsed: 14:30 | type: feedback ===   ← 1번 줄
+DIAGNOSE: Weakest decision is D2 (confidence 0.4).
+PROPOSE: Inversion — what if we use push instead of pull?
+TEST: grep codebase for event-driven patterns → 3 hits.
+UPDATE: D2 confidence raised to 0.65.
+META: Progressing. Next loop targets D4.                         ← 6번 줄
+---
+=== Report #2 | lines: 4 | elapsed: 10:00 | type: feedback ===
 ...
 ```
+
+**`lines:` 기준:** 헤더 줄(포함)부터 마지막 콘텐츠 줄(포함)까지. `---` 구분자와 리포트 사이의 빈 줄은 카운트에 포함하지 않습니다.
+에이전트는 매 리포트 작성 직후 이 값을 검증하고, 스크립팅 환경이면 lint 명령을 실행합니다.
 
 과거 리포트를 참조할 때는 상대좌표(`K-reports-below`, `line N below`)를 사용하므로,
 로그가 정리되거나 압축되어도 참조가 깨지지 않습니다.
